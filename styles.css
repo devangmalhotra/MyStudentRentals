@@ -83,11 +83,11 @@ nav {
     justify-content: center;
 }
 
-#home-page-first-section {
+#homepage-first-section {
     background-color: #CDBDDF;
 }
 
-#home-page-first-section-content {
+#homepage-first-section-content {
     height: 100vh;
     display: flex;
     align-items: center;
@@ -104,5 +104,15 @@ nav {
     color: rgb(105, 105, 105);
     font-size: 30px;
 }
+
+#homepage-second-section-content {
+    margin: 25px;
+}
+
+#second-section-subheadingtext {
+    line-height: 2;
+}
+
+
 
 
