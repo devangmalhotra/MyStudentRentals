@@ -12,18 +12,22 @@ ul {
 }
 
 h2 {
-    margin: 0 25px
+    margin: 0 25px;
 }
 
 li {
     display: inline-block;
-    padding: 27px 25px;
+    padding: 27px 15px;
+}
+
+li:last-child {
+    padding: 27px 25px 27px 15px;
 }
 
 header {
     display: flex;
     align-items: center;
-    background: greenyellow;
+    /*background: lightblue;*/
     min-height: 75px;
 }
 
@@ -31,3 +35,51 @@ nav {
     position: absolute;
     right: 0;
 }
+
+.sign-in-register-button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: #4A2574;
+    color: white;
+    padding: 5px;
+    width: 75px;
+    border: 1px solid;
+    border-color: white;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+}
+
+.sign-in-register-button:hover {
+    background-color: white;
+    color: #4A2574;
+    border-color: #4A2574;
+    transition-duration: 0.2s;
+}
+
+.menu-item {
+    text-decoration: none;
+    color: black;
+    transition-duration: 0.2s;
+}
+
+.menu-item:hover {
+    color: #4A2574;
+    font-weight: bold;
+    transition-duration: 0.2s;
+}
+
+.active {
+    background-color: rgb(231, 231, 231);
+    padding: 5px;
+    border-radius: 5px;
+
+}
+
+.menu-items {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
