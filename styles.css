@@ -27,7 +27,7 @@ li:last-child {
 header {
     display: flex;
     align-items: center;
-    background: lightblue;
+    background: white;
     min-height: 75px;
     position: fixed;
     width: 100%;
@@ -84,7 +84,7 @@ nav {
 }
 
 #home-page-first-section {
-    background-color: lightcoral;
+    background-color: #CDBDDF;
 }
 
 #home-page-first-section-content {
@@ -92,6 +92,17 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#homepage-maintext {
+    font-size: 75px;
+}
+
+#homepage-captiontext {
+    color: rgb(105, 105, 105);
+    font-size: 30px;
 }
 
 
