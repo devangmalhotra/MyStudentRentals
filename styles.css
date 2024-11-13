@@ -106,7 +106,7 @@ nav {
 }
 
 #homepage-second-section-content {
-    margin: 25px;
+    margin: 50px;
 }
 
 #second-section-subheadingtext {
@@ -114,6 +114,24 @@ nav {
     color: rgb(105, 105, 105);
 }
 
+#cards {
+    margin: 40px 0 0 0;
+}
 
+.listing-card {
+    width: 300px;
+    height: 500px;
+    border: 1px solid;
+    border-color: rgb(211, 211, 211);
+    overflow: hidden;
+}
 
+.listing-card-img {
+    display: flex;
+    justify-content: center;
+}
+
+.listing-card-img img{
+    width: 400px;
+}
 
