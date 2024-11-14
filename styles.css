@@ -133,5 +133,25 @@ nav {
 
 .listing-card-img img{
     width: 400px;
+    height: 250px;
+}
+
+.listing-card-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    height: 250px;
+}
+
+.listing-card-content p {
+    color: rgb(151, 151, 151);
+    font-size: 15px;
+}
+
+.listing-card-content-address {
+    text-align: center;
+    line-height: 1.5;
 }
 
