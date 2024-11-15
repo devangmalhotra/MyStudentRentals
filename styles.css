@@ -197,5 +197,30 @@ footer {
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    text-align: center;
+}
+
+@media screen and (max-width: 1060px) {
+    #cards {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    #homepage-maintext {
+        font-size: 50px;
+    }
+    #homepage-captiontext {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    #homepage-maintext {
+        font-size: 30px;
+    }
+    #homepage-captiontext {
+        font-size: 20px;
+    }
 }
 
