@@ -200,6 +200,10 @@ footer {
     text-align: center;
 }
 
+.hidden {
+    display: none;
+}
+
 @media screen and (max-width: 1060px) {
     #cards {
         flex-direction: column;
