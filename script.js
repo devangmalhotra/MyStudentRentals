@@ -1,9 +1,12 @@
-let navbar = document.getElementById("navbar");
+let menubarList = document.getElementById("menubar-list");
+let hamburger = document.getElementById("hamburger");
 function myFunction(x) {
     if (x.matches) {
-        navbar.classList.add("hidden");
+        menubarList.classList.add("hidden");
+        hamburger.classList.remove("hidden");
     } else {
-        navbar.classList.remove("hidden");
+        menubarList.classList.remove("hidden");
+        hamburger.classList.add("hidden");
     }
 }
 

@@ -17,11 +17,7 @@ h2 {
 
 li {
     display: inline-block;
-    padding: 27px 15px;
-}
-
-li:last-child {
-    padding: 27px 25px 27px 15px;
+    margin: 10px;
 }
 
 header {
@@ -31,11 +27,23 @@ header {
     min-height: 75px;
     position: fixed;
     width: 100%;
+    justify-content: space-between;
 }
 
 nav {
-    position: absolute;
-    right: 0;
+    display: flex;
+    justify-content: space-between;
+    margin: 25px;
+    align-items: center;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: blue;
 }
 
 .sign-in-register-button {
