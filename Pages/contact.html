@@ -1,31 +1,133 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us</title>
+  
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Page Layout */
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background-color: #CDBDDF;
+      color: #333;
+    }
+
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 600px;
+      margin: 20px;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    /* Section Styles */
+    h2 {
+      font-size: 1.9em;
+      margin-bottom: 0.5em;
+      color: #4A2574;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.2em;
+      margin-bottom: 1em;
+    }
+
+    /* Contact Form */
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    input:focus, textarea:focus {
+      border-color: #333;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #333;
+    }
+  </style>
+</head>
 <body>
-<h1>Contact Us</h1>
-<div class="container">
-    <form action="action_page.php">
-  
-      <label for="fname">First Name</label>
-      <input type="text" id="fname" name="firstname" placeholder="Your name..">
-  
-      <label for="lname">Last Name</label>
-      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
-  
-      <label for="reason">Reason</label>
-      <select id="reason" name="reason">
-        <option value="inquire about a listing">Inquire about a listing</option>
-        <option value="issue on website">Website Issue</option>
-        <option value="other">Other</option>
-      </select>
-  
-      <label for="moreInfo">Situation</label>
-      <textarea id="moreInfo" name="moreInfo" placeholder="Write something.." style="height:200px"></textarea>
-  
-      <input type="submit" value="Submit">
-  
-    </form>
+
+  <!-- Container -->
+  <div class="container">
+    <!-- About Us Section -->
+    <section id="about-us">
+        <h2>About Us</h2>
+        <p>Founded by students, for students, we understand the challenges of finding affordable and convenient housing near campus. Our mission is to simplify the search for student accommodations, making it easier for students to find a place they can truly call home during their college years.</p>
+        <p>Our team knows what it’s like to juggle classes, budgets, and the stress of moving, so we created this platform to connect students with living solutions that meet their unique needs. Whether you’re looking for roommates, shared apartments, or solo spaces, we’re here to help you every step of the way.</p>
+        <p>We believe that every student deserves a safe, comfortable, and accessible place to live, and we’re passionate about making that a reality. Let us help you find a home that’s close to campus and within your budget, so you can focus on what matters most: your studies and college experience.</p>
+      </section>
+
+    <!-- Contact Us Section -->
+    <section id="contact-us">
+      <h2>Contact Us</h2>
+      <form action="#" method="post">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 MyStudentRentals. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
