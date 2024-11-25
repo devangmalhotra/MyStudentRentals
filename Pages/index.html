@@ -8,20 +8,89 @@
 </head>
 <body>
     <header id="header">
-        <h2>MyStudentRentals</h2>
+        <h2>MyStudentRentals.ca</h2>
         <nav id="navbar">
-            <ul>
-                <li>Home</li>
-                <li>Browse Listings</li>
-                <li>Create Listing</li>
-                <li>Featured Listings</li>
-                <li>Contact</li>
-                <li><button class="sign-in-register-button">Sign In</button></li>
-                <li><button class="sign-in-register-button">Register</button></li>
+            <ul id="menubar-list">
+                <div id="menu-items" class="menu-items active">
+                    <li><a class="menu-item active" href="index.html">Home</a></li>
+                    <li><a class="menu-item" href="browse-listings.html">Browse Listings</a></li>
+                    <li>Create Listing</li>
+                    <li><a class="menu-item" href="contact.html">Contact</a></li>
+                    <li><a class="sign-in-register-button" href="login.html">Sign In</a></li>
+                    <li><a class="sign-in-register-button" href="login.html">Register</a></li>
+                </div>    
             </ul>
+            <div id="hamburger" class="">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
         </nav>
     </header>
-    <section id="homepage-first-section"></section>
-    <script src="script.js"></script>
+    <section id="homepage-first-section">
+        <div id="homepage-first-section-content">
+            <h1 id="homepage-maintext">MyStudentRentals.ca</h1>
+            <p id="homepage-captiontext">📍 Waterloo, ON</p>
+        </div>
+    </section>
+    <section id="homepage-second-section">
+        <div id="homepage-second-section-content">
+            <h1 id="second-section-headertext">Featured Listings</h1>
+            <p id="second-section-subheadingtext">Subheading</p>
+            <div id="cards">
+                <div class="listing-card">
+                    <div class="listing-card-img">
+                        <img src="../Images/60cd64b7-f051-4f32-a443-b584f291d16e.webp" alt="front">
+                    </div>
+                    <a class="view-listing-button" href="https://www.kijiji.ca/" target="_blank">View Listing</a>
+                    <div class="listing-card-content">
+                        <p>House</p>
+                        <h1>$720/month</h1>
+                        <p>2,503 Sq Ft.  •  5 Beds  •  3 Baths</p>
+                        <div class="listing-card-content-address">
+                            <p>564 Elegant Ave.</p>
+                            <p>San Francisco, CA 39244</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="listing-card">
+                    <div class="listing-card-img">
+                        <img src="../Images/60cd64b7-f051-4f32-a443-b584f291d16e.webp" alt="front">
+                    </div>
+                    <a class="view-listing-button" href="https://www.kijiji.ca/" target="_blank">View Listing</a>
+                    <div class="listing-card-content">
+                        <p>House</p>
+                        <h1>$720/month</h1>
+                        <p>2,503 Sq Ft.  •  5 Beds  •  3 Baths</p>
+                        <div class="listing-card-content-address">
+                            <p>564 Elegant Ave.</p>
+                            <p>San Francisco, CA 39244</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="listing-card">
+                    <div class="listing-card-img">
+                        <img src="../Images/60cd64b7-f051-4f32-a443-b584f291d16e.webp" alt="front">
+                    </div>
+                    <a class="view-listing-button" href="https://www.kijiji.ca/" target="_blank">View Listing</a>
+                    <div class="listing-card-content">
+                        <p>House</p>
+                        <h1>$720/month</h1>
+                        <p>2,503 Sq Ft.  •  5 Beds  •  3 Baths</p>
+                        <div class="listing-card-content-address">
+                            <p>564 Elegant Ave.</p>
+                            <p>San Francisco, CA 39244</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div id="footer-text">
+            <p>© 2024 MyStudentRentals.ca. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
 </body>
 </html>

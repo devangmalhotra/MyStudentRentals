@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyStudentRentals.ca</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E3E3E3;
+        }
+        header {
+            background-color: #4A2574;
+            color: #FFFFFF;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .filter-bar {
+            background-color: #CDBDDF;
+            padding: 15px;
+            margin: 10px;
+            border-radius: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        .filter-bar label {
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        .filter-bar select, .filter-bar input, .filter-bar output {
+            margin: 5px 10px 5px 0;
+            padding: 5px;
+        }
+        .filter-bar .slider-container {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+        }
+        .filter-bar .slider-container input {
+            margin-left: 10px;
+        }
+        .listings {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+        }
+        .listing {
+            background-color: #FFFFFF;
+            border: 1px solid #767676;
+            border-radius: 8px;
+            margin: 10px;
+            padding: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+        .listing img {
+            width: 100%;
+            height: 200px;
+            border-radius: 8px;
+        }
+        .view-listing {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(74, 37, 116, 0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .listing:hover .view-listing {
+            opacity: 1;
+        }
+        .listing h3, .listing p {
+            margin: 5px 0;
+        }
+        .btn {
+            background-color: #4A2574;
+            color: #FFFFFF;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #6A3F94;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MyStudentRentals.ca</h1>
+        <p>Find and compare student housing with ease!</p>
+    </header>
+
+    <div class="filter-bar">
+        <label for="distance-from">Distance From:</label>
+        <select id="distance-from" name="distance-from">
+            <option value="wlu">WLU</option>
+            <option value="uw-bus">UW Bus Station</option>
+            <option value="conestoga">Conestoga</option>
+            <option value="boardwalk">Boardwalk Bus Station</option>
+            <option value="uptown">Uptown Waterloo</option>
+            <option value="mall">Conestoga Mall Bus Stop</option>
+            <option value="custom">Custom Address</option>
+        </select>
+
+        <div class="slider-container">
+            <label for="radius">Radius:</label>
+            <input type="range" id="radius" name="radius" min="500" max="10000" step="500" oninput="this.nextElementSibling.value = this.value + ' m'">
+            <output>500 m</output>
+        </div>
+
+        <label for="amenities">Amenities:</label>
+        <select id="amenities" name="amenities">
+            <option value="">Select Amenities</option>
+            <option value="ac">AC</option>
+            <option value="wifi">Included Wi-Fi</option>
+            <option value="laundry">Laundry</option>
+            <option value="gym">Gym</option>
+            <option value="study">Study Room</option>
+            <option value="lounge">Lounge</option>
+            <option value="entertainment">Entertainment</option>
+        </select>
+
+        <label for="furnished">Furnished:</label>
+        <select id="furnished" name="furnished">
+            <option value="furnished">Furnished</option>
+            <option value="unfurnished">Unfurnished</option>
+        </select>
+
+        <label for="parking">Parking:</label>
+        <select id="parking" name="parking">
+            <option value="yes">Available</option>
+            <option value="no">Not Available</option>
+        </select>
+
+        <label for="utilities">Utilities:</label>
+        <select id="utilities" name="utilities">
+            <option value="included">Included</option>
+            <option value="not-included">Not Included</option>
+        </select>
+
+        <label for="gender">Gender-Based Housing:</label>
+        <select id="gender" name="gender">
+            <option value="all-male">All Male</option>
+            <option value="all-female">All Female</option>
+            <option value="coed">Coed</option>
+        </select>
+
+        <label for="duration">Duration:</label>
+        <input type="text" id="duration" name="duration" placeholder="e.g., 6 months, 1 year">
+
+        <label for="start-date">Start Date:</label>
+        <input type="date" id="start-date" name="start-date">
+
+        <button type="submit" class="btn">Apply Filters</button>
+    </div>
+
+    <div class="listings">
+        <div class="listing">
+            <img src="https://imgs.search.brave.com/XUbN65Q6nOmIPoLFN164E2ejtFfYXN228N1NXwDO4gc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5raWppamkuY2Ev/YXBpL3YxL2NhLXBy/b2QtZnNiby1hZHMv/aW1hZ2VzL2RjL2Rj/YTkwYjZiLTFlNzEt/NDE2Ny04ZTdhLTJh/NjI1MTc5NzJlYT9y/dWxlPWtpamlqaWNh/LTQwMC13ZWJw.jpeg" alt="Property 1">
+            <a href="#" class="view-listing">View Listing</a>
+            <h3>House</h3>
+            <p>$720/month</p>
+            <p>5 Beds • 3 Baths</p>
+            <p>Address: 321 King St N, Waterloo, ON</p>
+        </div>
+        <div class="listing">
+            <img src="https://imgs.search.brave.com/AHRo6mkObchIg5KJCjymTauzoxFwrRkqeNgWgx3PTJQ/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG5n/ZW5lcmFsLnJlbnRj/YWZlLmNvbS9kbXNs/aXZlY2FmZS8yLzEz/ODQ5NS9pTUFHRSUy/MDIoMSkuanBnP3dp/ZHRoPTQ4MCZxdWFs/aXR5PTkw" alt="Property 2">
+            <a href="#" class="view-listing">View Listing</a>
+            <h3>Apartment</h3>
+            <p>$849/month</p>
+            <p>2 Beds • 2 Baths</p>
+            <p>Address: 79 Westmount Rd N, Waterloo</p>
+        </div>
+        <div class="listing">
+            <img src="https://imgs.search.brave.com/ESuwvxBSlhB8DS3Xe5UgpmoZjF4766fitzuoLiXiHkc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZ3By/b3BlcnRpZXMuY29t/L2Fzc2V0cy9pbWFn/ZXMvY2FjaGUvY29y/ZS1hcGFydG1lbnRz/LWFuYWhlaW0tY2Et/bGVhc2luZy1hcmVh/LTAxLWQ4ZmExOWQw/YjgwOGYzZjA4MjBk/MTM2ZWQwYjNkMjUy/LmpwZw" alt="Property 3">
+            <a href="#" class="view-listing">View Listing</a>
+            <h3>Condo</h3>
+            <p>$1070/month</p>
+            <p>1 Bed • 1 Bath</p>
+            <p>Address: 280 Phillip St, Waterloo</p>
+        </div>
+        <div class="listing">
+            <img src="https://imgs.search.brave.com/ujklhaGtExh6FXckmVc4iVlyls5dW2V9OIBquvmwRxI/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG5n/ZW5lcmFsLnJlbnRj/YWZlLmNvbS9kbXNs/aXZlY2FmZS8zLzY2/MjE2NS9NYXJpYV9M/aW9uc19HYXRlX0tp/dGNoZW5fRGluaW5n/X1RLX3YyLmpwZz93/aWR0aD0zODA" alt="Property 4">
+            <a href="#" class="view-listing">View Listing</a>
+            <h3>Studio</h3>
+            <p>$900/month</p>
+            <p>1 Bed • 1 Bath</p>
+            <p>Address: 110 University Ave W, Waterloo</p>
+        </div>
+    </div>
+</body>
+</html>
