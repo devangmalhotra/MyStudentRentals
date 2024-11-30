@@ -1,39 +1,38 @@
-const express = require("express");
 const kijiji = require("kijiji-scraper");
-const app = express();
-const port = 3000;
+const fs = require('fs');
 
 const options = {
     maxResults: 3
 };
 
 const params = {
-    locationId: 1700212,  // Kitchener/Waterloo
-    categoryId: 36,
+    locationId: 1700185,  // Same as kijiji.locations.ONTARIO.OTTAWA_GATINEAU_AREA.OTTAWA
+    categoryId: 27,  // Same as kijiji.categories.CARS_AND_VEHICLES
     sortByName: "priceAsc"  // Show the cheapest listings first
 };
 
 // Scrape using optional callback parameter
-// API endpoint to serve the ads
-app.get("/api/ads", (req, res) => {
-    kijiji.search(params, options, (err, ads) => {
-        if (!err) {
-            const formattedAds = ads.map(ad => ({
-                title: ad.title,
-                description: ad.description,
-                url: ad.url,
-                price: ad.attributes.price,
-            }));
-            res.json(formattedAds); // Send the formatted ads as JSON
-        } else {
-            res.status(500).json({ error: "Failed to fetch ads" });
-        }
-    });
-});
+function callback(err, ads) {
+    if (!err) {
+        let jsonData = JSON.stringify(ads);
+        fs.writeFile('data.json', jsonData, (err) => {
+            if (err) {
+                console.error(err);
+                return;
+            }
+            console.log('Data written to file');
+        });
+    }
+}
 
-// Serve static files (e.g., HTML, CSS, JS)
-app.use(express.static("public"));
+kijiji.search(params, options, callback);
 
-app.listen(port, () => {
-    console.log(`Server running at http://localhost:${port}`);
-});
+//process.exit();
+
+/*fs.writeFile('data.json', jsonData, (err) => {
+    if (err) {
+        console.error(err);
+        return;
+    }
+    console.log('Data written to file');
+});*/
