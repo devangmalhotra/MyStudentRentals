@@ -1,14 +1,16 @@
 const kijiji = require("kijiji-scraper");
 const fs = require('fs');
+let counter = 0;
 
 const options = {
     maxResults: 3
 };
 
 const params = {
-    locationId: 1700185,  // Same as kijiji.locations.ONTARIO.OTTAWA_GATINEAU_AREA.OTTAWA
-    categoryId: 27,  // Same as kijiji.categories.CARS_AND_VEHICLES
-    sortByName: "priceAsc"  // Show the cheapest listings first
+    locationId: 1700212,  // Waterloo/Kitchener region
+    categoryId: 36,  // Room Rentals & Roommates
+    sortByName: "priceAsc",  // Show the cheapest listings first
+    minPrice: 200
 };
 
 // Scrape using optional callback parameter
@@ -21,11 +23,17 @@ function callback(err, ads) {
                 return;
             }
             console.log('Data written to file');
+            counter += 1;
         });
     }
 }
 
 kijiji.search(params, options, callback);
+
+if (counter == 1) {
+    counter = 0;
+    process.exit();
+}
 
 //process.exit();
 
