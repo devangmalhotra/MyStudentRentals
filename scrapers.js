@@ -9,8 +9,8 @@ const options = {
 const params = {
     locationId: 1700212,  // Waterloo/Kitchener region
     categoryId: 36,  // Room Rentals & Roommates
-    sortByName: "priceAsc",  // Show the cheapest listings first
-    minPrice: 200
+    sortByName: "dateDesc",  // Most recent listings
+    minPrice: 400
 };
 
 // Scrape using optional callback parameter

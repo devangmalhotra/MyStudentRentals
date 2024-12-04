@@ -187,6 +187,10 @@ nav {
     line-height: 1.5;
 }
 
+.listing-card-content-address p {
+    margin: 10px;
+}
+
 .view-listing-button {
     position: absolute; 
     margin:-16px 0px 0px 100px;

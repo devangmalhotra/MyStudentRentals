@@ -24,7 +24,7 @@ for (let i = 0; i < ads.length; i++) {
     let newListingCardContent = document.createElement('div');
     newListingCardContent.classList.add('listing-card-content');
     let newListingCardContentH1 = document.createElement('h1');
-    newListingCardContentH1.innerHTML = `${ads[i].attributes.price}/month`
+    newListingCardContentH1.innerHTML = `$${ads[i].attributes.price}/month`
     let newListingCardContentP = document.createElement('p');
     newListingCardContentP.innerHTML = '2,503 Sq Ft.  •  5 Beds  •  3 Baths'; // UPDATE THIS
 
@@ -33,7 +33,20 @@ for (let i = 0; i < ads.length; i++) {
     let newListingCardContentAddressP = document.createElement('p');
     newListingCardContentAddressP.innerHTML = ads[i].attributes.location.mapAddress;
 
+    // Creating the listing card
+    newListingCardContentAddress.appendChild(newListingCardContentAddressP);
 
+    newListingCardContent.appendChild(newListingCardContentH1);
+    newListingCardContent.appendChild(newListingCardContentP);
+    newListingCardContent.appendChild(newListingCardContentAddress);
+
+    newListingCardImgDiv.appendChild(newListingImg);
+
+    newListingCardDiv.appendChild(newListingCardImgDiv);
+    newListingCardDiv.appendChild(newViewListingButton);
+    newListingCardDiv.appendChild(newListingCardContent);
+
+    cardsContainer.appendChild(newListingCardDiv);
 }
 
 
