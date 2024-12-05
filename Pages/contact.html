@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us</title>
+  <link rel="stylesheet" href="../styles.css">
   
   <style>
     /* Basic Reset */
@@ -11,7 +12,6 @@
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: Arial, sans-serif;
     }
 
     /* Page Layout */
@@ -22,12 +22,12 @@
       justify-content: center;
       min-height: 100vh;
       background-color: #CDBDDF;
-      color: #333;
+      padding-top: 100px;
     }
 
     /* Container */
     .container {
-      width: 90%;
+      width: 100%;
       max-width: 600px;
       margin: 20px;
       padding: 20px;
@@ -85,16 +85,30 @@
     button:hover {
       background-color: #555;
     }
-
-    /* Footer */
-    footer {
-      margin-top: 20px;
-      font-size: 0.9em;
-      color: #333;
-    }
+    
   </style>
 </head>
 <body>
+  <header id="header">
+    <h2>MyStudentRentals.ca</h2>
+    <nav id="navbar">
+        <ul id="menubar-list">
+            <div id="menu-items" class="menu-items active">
+                <li><a class="menu-item active" href="index.html">Home</a></li>
+                <li><a class="menu-item" href="browse-listings.html">Browse Listings</a></li>
+                <li><a class="menu-item" href="create-listing/index.html">Create Listing</a></li>
+                <li><a class="menu-item" href="contact.html">Contact</a></li>
+                <li><a class="sign-in-register-button" href="login.html">Sign In</a></li>
+                <li><a class="sign-in-register-button" href="login.html">Register</a></li>
+            </div>    
+        </ul>
+        <div id="hamburger" class="">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </nav>
+</header>
 
   <!-- Container -->
   <div class="container">
@@ -126,8 +140,10 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2024 MyStudentRentals. All rights reserved.</p>
-  </footer>
-
+    <div id="footer-text">
+        <p>© 2024 MyStudentRentals.ca. All Rights Reserved.</p>
+    </div>
+</footer>
+  <script src="../script.js"></script>
 </body>
 </html>
