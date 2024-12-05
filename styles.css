@@ -30,7 +30,7 @@
     background-color: #fff;
 }
 
-header h2 {
+#header h2 {
     margin: 0 25px;
 }
 
@@ -226,6 +226,7 @@ nav {
 footer {
     background-color:#CDBDDF;
     padding: 20px;
+    width: 100%;
 }
 
 #footer-text {
