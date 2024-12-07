@@ -24,6 +24,7 @@ function callback(err, ads) {
             }
             console.log('Data written to file');
             counter += 1;
+            process.exit();
         });
     }
 }
@@ -32,7 +33,6 @@ kijiji.search(params, options, callback);
 
 if (counter == 1) {
     counter = 0;
-    process.exit();
 }
 
 //process.exit();
