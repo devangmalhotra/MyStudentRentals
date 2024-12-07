@@ -201,5 +201,47 @@
             <p>Address: 110 University Ave W, Waterloo</p>
         </div>
     </div>
+    <script>
+        async function loadListings() {
+            try {
+                // Fetch listings from the backend
+                const response = await fetch("http://localhost:3000/api/listings");
+                if (!response.ok) {
+                    throw new Error("Failed to fetch listings");
+                }
+                const listings = await response.json();
+    
+                // Get the container to display listings
+                const listingsContainer = document.getElementById("listings-container");
+                listingsContainer.innerHTML = ""; // Clear existing listings
+    
+                // Render each listing
+                listings.forEach((listing) => {
+                    const listingDiv = document.createElement("div");
+                    listingDiv.className = "listing";
+    
+                    listingDiv.innerHTML = `
+                        <h3>${listing.propertyType}</h3>
+                        <p>${listing.bedrooms} Beds • ${listing.bathrooms} Baths</p>
+                        <p>Price: $${listing.price}/month</p>
+                        <p>Location: ${listing.location}</p>
+                        <p>${listing.description}</p>
+                    `;
+    
+                    listingsContainer.appendChild(listingDiv);
+                });
+            } catch (error) {
+                console.error("Error loading listings:", error);
+            }
+        }
+    
+        // Load listings when the page loads
+        document.addEventListener("DOMContentLoaded", loadListings);
+    </script>
+    <div class="listings" id="listings-container">
+        <!-- Listings will be dynamically loaded here by JavaScript -->
+    </div>
+    
+    
 </body>
 </html>
