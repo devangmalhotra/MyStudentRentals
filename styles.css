@@ -30,7 +30,7 @@
     background-color: #fff;
 }
 
-h2 {
+#header h2 {
     margin: 0 25px;
 }
 
@@ -48,6 +48,7 @@ header {
     width: 100%;
     justify-content: space-between;
     z-index: 9999;
+    top: 0;
 }
 
 nav {
@@ -187,6 +188,10 @@ nav {
     line-height: 1.5;
 }
 
+.listing-card-content-address p {
+    margin: 10px;
+}
+
 .view-listing-button {
     position: absolute; 
     margin:-16px 0px 0px 100px;
@@ -221,6 +226,7 @@ nav {
 footer {
     background-color:#CDBDDF;
     padding: 20px;
+    width: 100%;
 }
 
 #footer-text {

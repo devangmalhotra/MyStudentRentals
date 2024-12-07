@@ -7,7 +7,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #E3E3E3;
             margin: 0;
             padding: 20px;
         }
@@ -20,7 +20,7 @@
 
         .form-section, .preview-section {
             width: 48%;
-            background: white;
+            background: #FFFFFF;
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -28,6 +28,7 @@
 
         h1, h2 {
             font-size: 20px;
+            color: #4A2574;
             margin-bottom: 15px;
         }
 
@@ -45,7 +46,7 @@
             width: 100%;
             padding: 10px;
             margin: 0;
-            border: 1px solid #ccc;
+            border: 1px solid #CCC;
             border-radius: 5px;
         }
 
@@ -54,7 +55,7 @@
         }
 
         button {
-            background-color: #4CAF50;
+            background-color: #4A2574;
             color: white;
             border: none;
             cursor: pointer;
@@ -62,7 +63,7 @@
         }
 
         button:hover {
-            background-color: #45a049;
+            background-color: #6A3F94;
         }
 
         .upload-section {
@@ -132,7 +133,9 @@
                     <option value="No">No</option>
                 </select>
 
+                <!-- Preview and Save Buttons -->
                 <button type="button" onclick="previewListing()">Preview Listing</button>
+                <button type="button" onclick="saveListing()">Save Listing</button>
             </form>
         </div>
 
@@ -166,30 +169,49 @@
             document.getElementById('preview-location').innerText = location || "N/A";
             document.getElementById('preview-description').innerText = description || "N/A";
             document.getElementById('preview-details').innerText = `${bedrooms} Beds, ${bathrooms} Baths, ${footage} sqft`;
+        }
 
-            const photos = document.getElementById('photos').files;
-            const photoPreview = document.getElementById('preview-photos');
-            photoPreview.innerHTML = "";
-            Array.from(photos).forEach(photo => {
-                const img = document.createElement('img');
-                img.src = URL.createObjectURL(photo);
-                img.alt = "Property Photo";
-                img.style.width = "100px";
-                img.style.margin = "5px";
-                photoPreview.appendChild(img);
-            });
+        function saveListing() {
+        const propertyType = document.getElementById('propertyType').value;
+        const bedrooms = document.getElementById('bedrooms').value;
+        const bathrooms = document.getElementById('bathrooms').value;
+        const price = document.getElementById('price').value;
+        const location = document.getElementById('location').value;
+        const description = document.getElementById('description').value;
+        const photos = document.getElementById('photos').files;
 
-            const video = document.getElementById('video').files[0];
-            const videoPreview = document.getElementById('preview-video');
-            videoPreview.innerHTML = "";
-            if (video) {
-                const vid = document.createElement('video');
-                vid.src = URL.createObjectURL(video);
-                vid.controls = true;
-                vid.style.width = "100%";
-                videoPreview.appendChild(vid);
+        // Convert photos to Base64
+        const photoBase64Array = [];
+        if (photos) {
+            for (const photo of photos) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    photoBase64Array.push(e.target.result);
+
+                    // Save when all photos are processed
+                    if (photoBase64Array.length === photos.length) {
+                        const listing = {
+                            propertyType,
+                            bedrooms,
+                            bathrooms,
+                            price,
+                            location,
+                            description,
+                            photos: photoBase64Array
+                        };
+
+                        const listings = JSON.parse(localStorage.getItem('listings')) || [];
+                        listings.push(listing);
+                        localStorage.setItem('listings', JSON.stringify(listings));
+
+                        // Redirect to browse listings page
+                        window.location.href = "browse-listings.html";
+                    }
+                };
+                reader.readAsDataURL(photo); // Convert to Base64
             }
         }
+    }
     </script>
 </body>
 </html>
