@@ -170,7 +170,7 @@
     <div class="listings">
         <div class="listing">
             <img src="https://imgs.search.brave.com/XUbN65Q6nOmIPoLFN164E2ejtFfYXN228N1NXwDO4gc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5raWppamkuY2Ev/YXBpL3YxL2NhLXBy/b2QtZnNiby1hZHMv/aW1hZ2VzL2RjL2Rj/YTkwYjZiLTFlNzEt/NDE2Ny04ZTdhLTJh/NjI1MTc5NzJlYT9y/dWxlPWtpamlqaWNh/LTQwMC13ZWJw.jpeg" alt="Property 1">
-            <a href="#" class="view-listing">View Listing</a>
+            <a href="viewlisting.html" class="view-listing">View Listing</a>
             <h3>House</h3>
             <p>$720/month</p>
             <p>5 Beds • 3 Baths</p>
@@ -201,43 +201,5 @@
             <p>Address: 110 University Ave W, Waterloo</p>
         </div>
     </div>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-    const listings = JSON.parse(localStorage.getItem('listings')) || [];
-    const listingsContainer = document.querySelector('.listings');
-    listingsContainer.innerHTML = '';
-
-    listings.forEach(listing => {
-        const listingDiv = document.createElement('div');
-        listingDiv.classList.add('listing');
-
-        // Create HTML structure for the listing
-        listingDiv.innerHTML = `
-            <h3>${listing.propertyType}</h3>
-            <p>${listing.bedrooms} Beds • ${listing.bathrooms} Baths</p>
-            <p>Price: $${listing.price}/month</p>
-            <p>Location: ${listing.location}</p>
-            <p>${listing.description}</p>
-        `;
-
-        // Add photos
-        if (listing.photos) {
-            const photoContainer = document.createElement('div');
-            listing.photos.forEach(photo => {
-                const img = document.createElement('img');
-                img.src = photo;
-                img.alt = 'Uploaded Property Photo';
-                img.style.width = '100px';
-                img.style.margin = '5px';
-                photoContainer.appendChild(img);
-            });
-            listingDiv.appendChild(photoContainer);
-        }
-
-        listingsContainer.appendChild(listingDiv);
-    });
-});
-
- </script>
 </body>
 </html>

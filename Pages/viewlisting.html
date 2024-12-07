@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #E3E3E3;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        header {
+            background-color: #4A2574;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            width: 100%;
+            position: absolute;
+            top: 0;
+        }
+        .details-container {
+            background-color: #FFFFFF;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: row;
+            width: 50%;
+            max-width: 700px;
+        }
+        .details-container img {
+            width: 40%;
+            max-height: 100%;
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .details {
+            flex: 1;
+        }
+        .details h2 {
+            color: #4A2574;
+            margin-bottom: 10px;
+        }
+        .details p {
+            margin: 5px 0;
+        }
+        .details ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .details ul li {
+            margin: 5px 0;
+        }
+        .contact-container {
+            margin-top: 20px;
+        }
+        .contact-container textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #CCC;
+            border-radius: 5px;
+            resize: none;
+            margin-bottom: 10px;
+        }
+        .contact-container button {
+            background-color: #4A2574;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-container button:hover {
+            background-color: #6A3F94;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4A2574;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .back-button:hover {
+            background-color: #6A3F94;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Listing Details</h1>
+    </header>
+
+    <div class="details-container">
+        <img src="https://imgs.search.brave.com/XUbN65Q6nOmIPoLFN164E2ejtFfYXN228N1NXwDO4gc/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5raWppamkuY2Ev/YXBpL3YxL2NhLXBy/b2QtZnNiby1hZHMv/aW1hZ2VzL2RjL2Rj/YTkwYjZiLTFlNzEt/NDE2Ny04ZTdhLTJh/NjI1MTc5NzJlYT9y/dWxlPWtpamlqaWNh/LTQwMC13ZWJw.jpeg" alt="Property Image">
+        <div class="details">
+            <h2>House - 5 Beds, 3 Baths</h2>
+            <p><strong>Price:</strong> $720/month</p>
+            <p><strong>Address:</strong> 321 King St N, Waterloo, ON</p>
+            <p><strong>Description:</strong> Spacious house perfect for students, close to all amenities.</p>
+            <p><strong>Distance from Wilfrid Laurier University:</strong> 5 minutes walk</p>
+            <p><strong>Amenities:</strong></p>
+            <ul>
+                <li>High-speed Internet</li>
+                <li>On-site Laundry</li>
+                <li>Parking Available</li>
+                <li>Furnished Common Areas</li>
+                <li>24/7 Maintenance</li>
+            </ul>
+
+            <div class="contact-container">
+                <h3>Contact the Seller</h3>
+                <textarea placeholder="Type your message here..."></textarea>
+                <button type="button">Send Message</button>
+            </div>
+
+            <a href="index.html" class="back-button">Back to Listings</a>
+        </div>
+    </div>
+</body>
+</html>
