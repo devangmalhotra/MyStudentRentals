@@ -204,18 +204,15 @@
     <script>
         async function loadListings() {
             try {
-                // Fetch listings from the backend
                 const response = await fetch("http://localhost:3000/api/listings");
                 if (!response.ok) {
                     throw new Error("Failed to fetch listings");
                 }
                 const listings = await response.json();
     
-                // Get the container to display listings
                 const listingsContainer = document.getElementById("listings-container");
-                listingsContainer.innerHTML = ""; // Clear existing listings
-    
-                // Render each listing
+                listingsContainer.innerHTML = "";
+
                 listings.forEach((listing) => {
                     const listingDiv = document.createElement("div");
                     listingDiv.className = "listing";
@@ -235,13 +232,9 @@
             }
         }
     
-        // Load listings when the page loads
-        document.addEventListener("DOMContentLoaded", loadListings);
+        
+        
     </script>
-    <div class="listings" id="listings-container">
-        <!-- Listings will be dynamically loaded here by JavaScript -->
-    </div>
-    
     
 </body>
 </html>
